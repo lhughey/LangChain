@@ -1,6 +1,6 @@
-import weather
 import os
 from dotenv import load_dotenv
+from supervisor import SupervisorAgent
 
 
 
@@ -9,13 +9,18 @@ from dotenv import load_dotenv
 #create a main method that will run the program
 
 def main():
-    print("Hello, World!")
+    # Load environment variables
     load_dotenv()
-    #print(os.getenv("LANGCHAIN_API_KEY"))
-    weather_result = weather.get_weather("San Francisco")
-    print(f"Weather result: {weather_result}")
-    print("Done")
     
+    # Initialize the supervisor agent
+    supervisor = SupervisorAgent()
+    
+    # Example usage
+    user_input = "What's the weather and latest news in San Francisco?"
+    result = supervisor.process_request(user_input)
+    
+    print("\nSupervisor Agent Response:")
+    print(result["output"])
 
 if __name__ == "__main__":
     main()
