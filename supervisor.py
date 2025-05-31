@@ -21,7 +21,8 @@ class SupervisorAgent:
 
     def _register_tools(self) -> List[Tool]:
         """Register all available tools."""
-        from weather import get_weather, get_news
+        from weather import get_weather
+        from open_weather import get_detailed_weather
         
         return [
             Tool(
@@ -30,9 +31,9 @@ class SupervisorAgent:
                 description="Get the current weather for a given city"
             ),
             Tool(
-                name="get_news",
-                func=get_news,
-                description="Get the latest news for a given city"
+                name="get_detailed_weather",
+                func=get_detailed_weather,
+                description="Get detailed weather information including temperature, conditions, and more for a given city"
             )
         ]
 

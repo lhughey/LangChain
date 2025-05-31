@@ -16,7 +16,7 @@ def main():
     supervisor = SupervisorAgent()
     
     # Example usage
-    user_input = "What's the weather and latest news in San Francisco?"
+    user_input = "What's the weather and detailed weather in San Francisco?"
     result = supervisor.process_request(user_input)
     
     print("\nSupervisor Agent Response:")
